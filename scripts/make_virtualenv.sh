@@ -8,7 +8,7 @@ base=$scripts/..
 
 mkdir -p $base/venvs
 
-# python3 needs to be installed on your system
+# python3.10 needs to be installed on your system
 
 python3 -m virtualenv -p python3.10 $base/venvs/torch3
 
