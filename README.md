@@ -30,8 +30,14 @@ Download Moses for post-processing:
     ./scripts/download_install_packages.sh
 
 
-Train a model:
+Train your models:
 
     ./scripts/train.sh
 
 The training process can be interrupted at any time, and the best checkpoint will always be saved. It is also possible to continue training from there later on.
+
+Note: The train.sh script has been updated so that in it's current state, if it is run, the models with pre- and post-layer normalization would be trained (Using the newly added config scripts). The code to train the baseline model (lines 16-31) can be uncommented if desired. 
+
+Following training, logs can be analyzed in order to get a table of validation perplexities (calculated every 500 steps during training) for any models of interest. A lineplot comparing training progress for any input models will also be part of the output. Run the following script with the args "--input-dir" and "--output-dir":
+
+    scripts/log_analysis.py
